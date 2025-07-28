@@ -8,19 +8,22 @@
   <body>
     <div class="container">
         <h1>Typing Speed Test</h1>
+        <p>{{ prompt }}</p>
+        <form method="POST">
+            <textarea name="typed_text" rows="5" cols="60" placeholder="Type the above sentence here..."></textarea>
+            <input type="hidden" name="start_time" value="{{ time() }}">
+            <br><button type="submit">Submit</button>
+        </form>
 
+        {% if result %}
+        <div class="results">
+            <h2>Your Results</h2>
+            <p>WPM: {{ result.wpm }}</p>
+            <p>Accuracy: {{ result.accuracy }}%</p>
+            <p>Time Taken: {{ result.elapsed }} seconds</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
 
-      
-  </body>
-
-    
-  </body>
-
-
-
-
-
-
-
-  
-</HTML>
